@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../pages/Footer";
 import Header from "../pages/Header";
 import LeftSidebar from "../pages/LeftSidebar";
+import Breadcrumb from "./Breadcrumb";
 import { useDisclosure } from "@mantine/hooks";
 
 export default function Layout() {
@@ -32,6 +33,7 @@ export default function Layout() {
             toggleMobile={toggleMobile}
             toggleDesktop={toggleDesktop}
           />
+          <Breadcrumb />
           <Outlet />
           <Footer />
         </AppShell.Main>

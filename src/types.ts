@@ -1,5 +1,5 @@
 export type Pet = {
-  id: string
+  id: string | number
   name: string
   species: 'dog' | 'cat' | 'other'
   breed?: string
@@ -9,4 +9,8 @@ export type Pet = {
   photos?: string[]
   healthRecords?: Array<{ date: string; note: string }>
   feedingSchedule?: Array<{ time: string; food: string }>
+  age?: number
+  description?: string
+  images?: string[]
+  dateAdded?: string
 }

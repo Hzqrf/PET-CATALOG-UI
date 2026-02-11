@@ -3,19 +3,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 import {
   TbLayoutDashboard,
   TbLayoutDashboardFilled,
-  TbPackage,
   TbShoppingCart,
   TbShoppingCartFilled,
-  TbGift,
-  TbDeviceGamepad2,
-  TbShieldCheck,
   TbCash,
-  TbArrowsLeftRight,
-  TbBriefcase,
-  TbUser,
-  TbHistory,
-  TbCloud,
-  TbRefresh,
+  TbTool,
+  TbCalendarClock,
+  TbVaccine,
+  TbClipboardText,
 } from "react-icons/tb";
 import cat from "../assets/test.jpg";
 
@@ -65,11 +59,52 @@ const LeftSidebar = () => {
             )
           }
         />
+          <NavLink
+            label="Pets"
+            onClick={() => navigate("/pet-list")}
+            style={{ margin: "5px" }}
+            active={location.pathname === "/pet-list"}
+            leftSection={
+              location.pathname === "/pet-list" ? (
+                <TbShoppingCartFilled size={16} />
+              ) : (
+                <TbShoppingCart size={16} />
+              )
+            }
+          />
+        <NavLink
+          label="Appointments"
+          onClick={() => navigate("/appointments")}
+          style={{ margin: "2px" }}
+          active={location.pathname === "/appointments"}
+          leftSection={<TbCalendarClock />}
+        />
+        <NavLink
+          label="Vaccinations"
+          onClick={() => navigate("/vaccinations")}
+          style={{ margin: "2px" }}
+          active={location.pathname === "/vaccinations"}
+          leftSection={<TbVaccine />}
+        />
+        <NavLink
+          label="Billing Details"
+          onClick={() => navigate("/billing-details")}
+          style={{ margin: "2px" }}
+          active={location.pathname === "/billing-details"}
+          leftSection={<TbCash />}
+        />
+        <NavLink
+          label="Reports"
+          onClick={() => navigate("/reports")}
+          style={{ margin: "2px" }}
+          active={location.pathname === "/reports"}
+          leftSection={<TbClipboardText />}
+        />
         <NavLink
           label="Tools"
           style={{ margin: "5px" }}
           childrenOffset={16}
-          leftSection={<TbPackage />}
+          leftSection={<TbTool />}
         >
           <NavLink
             label="tools-dashboard"
@@ -84,60 +119,6 @@ const LeftSidebar = () => {
             active={location.pathname === "/products/product-items"}
           />
         </NavLink>
-        <NavLink
-          label="Pets"
-          onClick={() => navigate("/pet-profile")}
-          style={{ margin: "5px" }}
-          active={location.pathname === "/pet-profile"}
-          leftSection={
-            location.pathname === "/pet-profile" ? (
-              <TbShoppingCartFilled size={16} />
-            ) : (
-              <TbShoppingCart size={16} />
-            )
-          }
-        />
-        <NavLink
-          label="tools-dashboard"
-          onClick={() => navigate("/tools-dashboard")}
-          style={{ margin: "5px" }}
-          active={location.pathname === "/tools-dashboard"}
-          leftSection={
-            location.pathname === "/tools-dashboard" ? (
-              <TbShoppingCartFilled size={16} />
-            ) : (
-              <TbShoppingCart size={16} />
-            )
-          }
-        />
-        <NavLink
-          label="Appointments"
-          onClick={() => navigate("/appointments")}
-          style={{ margin: "2px" }}
-          active={location.pathname === "/appointments"}
-          leftSection={<TbDeviceGamepad2 />}
-        />
-        <NavLink
-          label="Vaccinations"
-          onClick={() => navigate("/vaccinations")}
-          style={{ margin: "2px" }}
-          active={location.pathname === "/vaccinations"}
-          leftSection={<TbShieldCheck />}
-        />
-        <NavLink
-          label="Billing Details"
-          onClick={() => navigate("/billing-details")}
-          style={{ margin: "2px" }}
-          active={location.pathname === "/billing-details"}
-          leftSection={<TbCash />}
-        />
-        <NavLink
-          label="Reports"
-          onClick={() => navigate("/reports")}
-          style={{ margin: "2px" }}
-          active={location.pathname === "/reports"}
-          leftSection={<TbArrowsLeftRight />}
-        />
       </ScrollArea>
     </AppShell.Navbar>
   );
